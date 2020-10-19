@@ -1,5 +1,5 @@
 {
-    "name": "etus/etus-log",
+    "name": "aislandener/etus-log",
     "type": "library",
     "authors": [
         {
@@ -7,7 +7,8 @@
             "email": "aislandenersouzavicentini@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+    },
     "autoload": {
         "psr-4": {
             "Etus\\EtusLog\\": "src/"
