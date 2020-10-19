@@ -16,7 +16,7 @@ class EtusLogServiceProvider extends ServiceProvider{
         }
         $this->publishes([
             $configPath => $publishPath,
-        ], 'etus-log');
+        ]);
     }
 
     public function register()
