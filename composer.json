@@ -12,13 +12,13 @@
     "extra": {
         "lavavel":{
             "providers": [
-                "Aislandener\\EtusLog\\EtusLogServiceProvider"
+                "Etus\\EtusLog\\EtusLogServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Aislandener\\EtusLog\\": "src/"
+            "Etus\\EtusLog\\": "src/"
         }
     }
 }

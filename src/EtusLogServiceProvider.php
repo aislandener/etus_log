@@ -1,6 +1,6 @@
- <?php
+<?php
  
-namespace Aislandener\EtusLog;
+namespace Etus\EtusLog;
 
 use Illuminate\Support\ServiceProvider;
 

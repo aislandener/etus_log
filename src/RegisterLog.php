@@ -1,6 +1,6 @@
 <?php
 
-namespace Aislandener\EtusLog;
+namespace Etus\EtusLog;
 
 class RegisterLog{
     public function TestLog()
