@@ -7,9 +7,16 @@ use Illuminate\Support\ServiceProvider;
 class EtusLogServiceProvider extends ServiceProvider{
     public function boot()
     {
+
+        $configPath = __DIR__ . '/../config/etus_log.php';
+        if (function_exists('config_path')) {
+            $publishPath = config_path('etus_log.php');
+        } else {
+            $publishPath = base_path('config/etus_log.php');
+        }
         $this->publishes([
-            __DIR__.'/../config/etus_log.php' => app()->basePath('config/etus_log.php'),
-        ]);
+            $configPath => $publishPath,
+        ], 'etus-log');
     }
 
     public function register()

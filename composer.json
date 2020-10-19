@@ -12,7 +12,7 @@
     "extra": {
         "lavavel":{
             "providers": [
-                "Etus/EtusLog/EtusLogServiceProvider"
+                "Etus\\EtusLog\\EtusLogServiceProvider"
             ]
         }
     },
