@@ -1,0 +1,16 @@
+{
+    "name": "etus/etus-log",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aislan Dener",
+            "email": "aislandenersouzavicentini@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Etus\\EtusLog\\": "src/"
+        }
+    }
+}
