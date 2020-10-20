@@ -30,7 +30,7 @@ class Log extends DynamoDbModel{
                 'DYNAMODB_SECRET' => env('DYNAMODB_SECRET'),
                 'DYNAMODB_REGION' => env('DYNAMODB_REGION'),
                 'DYNAMODB_DEBUG' => env('DYNAMODB_DEBUG'),
-                'ETUS_LOG_DYNAMO_TABLE_NAME' => env('ETUS_LOG_DYNAMO_TABLE_NAME')
+                'ETUS_LOG_DYNAMO_TABLE_NAME' => env('ETUS_LOG_DYNAMO_TABLE_NAME') 
             ];
 
             $validator = Validator::make($env, [
