@@ -1,15 +1,21 @@
 {
     "name": "aislandener/etus-log",
     "description": "Register Log for Etus",
+    "version": "1.0.3",
     "type": "library",
+    "keywords": ["Etus", "Laravel", "Log"],
+    "homepage": "https://etus.com.br",
+    "license": "MIT",
     "authors": [
         {
             "name": "Aislan Dener",
             "email": "aislandenersouzavicentini@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": ">=4.0"
     },
     "autoload": {
         "psr-4": {
@@ -17,7 +23,7 @@
         }
     },
     "extra": {
-        "lavavel":{
+        "laravel": {
             "providers": [
                 "Etus\\EtusLog\\EtusLogServiceProvider"
             ],
