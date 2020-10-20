@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class Log extends DynamoDbModel{
     
-    protected $table = "logs_pacote";
+    protected $table;
     protected $fillable = ["origem", "primary_key", "request", "response"];
     public $timestamps = false;
     
@@ -29,19 +29,23 @@ class Log extends DynamoDbModel{
                 'DYNAMODB_KEY' => env('DYNAMODB_KEY'),
                 'DYNAMODB_SECRET' => env('DYNAMODB_SECRET'),
                 'DYNAMODB_REGION' => env('DYNAMODB_REGION'),
-                'DYNAMODB_DEBUG' => env('DYNAMODB_DEBUG')
+                'DYNAMODB_DEBUG' => env('DYNAMODB_DEBUG'),
+                'ETUS_LOG_DYNAMO_TABLE_NAME' => env('ETUS_LOG_DYNAMO_TABLE_NAME')
             ];
 
             $validator = Validator::make($env, [
                 'DYNAMODB_KEY' => 'required',
                 'DYNAMODB_SECRET' => 'required',
                 'DYNAMODB_REGION' => 'required',
-                'DYNAMODB_DEBUG' => 'required'
+                'DYNAMODB_DEBUG' => 'required',
+                'ETUS_LOG_DYNAMO_TABLE_NAME' => 'required'
             ]);
 
             if ($validator->fails()) {
                 throw new \Exception('Exception: ' . $validator->errors()->all()[0]);
             }
+
+            $this->table = env('ETUS_LOG_DYNAMO_TABLE_NAME');
         }
     }
 
