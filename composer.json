@@ -9,6 +9,11 @@
     ],
     "require": {
     },
+    "autoload": {
+        "psr-4": {
+            "Etus\\EtusLog\\": "src/"
+        }
+    },
     "extra": {
         "lavavel":{
             "providers": [
@@ -19,9 +24,4 @@
             }
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Etus\\EtusLog\\": "src/"
-        }
-    }
 }
