@@ -1,7 +1,7 @@
 {
     "name": "aislandener/etus-log",
     "description": "Register Log for Etus",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "type": "library",
     "keywords": ["Etus", "Laravel", "Log"],
     "homepage": "https://etus.com.br",
