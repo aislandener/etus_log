@@ -20,7 +20,7 @@ class Log extends DynamoDbModel{
         ]
     );
 
-    public function __construct(){
+    public function __construct(){ 
 
         $log_enable = env('LOG_ENABLE');
 
