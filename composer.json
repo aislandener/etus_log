@@ -13,7 +13,10 @@
         "lavavel":{
             "providers": [
                 "Etus\\EtusLog\\EtusLogServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "EtusLog": "Etus\\EtusLog\\Facades\\EtusLog"
+            }
         }
     },
     "autoload": {

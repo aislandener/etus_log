@@ -23,5 +23,9 @@ class EtusLogServiceProvider extends ServiceProvider{
     {
         $configPath = __DIR__ . '/../config/etus_log.php';
         $this->mergeConfigFrom($configPath, 'etus_log');
+
+        $this->app->singleton('EtusLog', function(){
+            return new RegisterLog();
+        });
     }
 }
