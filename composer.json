@@ -1,18 +1,36 @@
 {
-    "name": "etus/etus-log",
+    "name": "aislandener/etus-log",
+    "description": "Register Log for Etus",
+    "version": "1.0.3",
     "type": "library",
+    "keywords": ["Etus", "Laravel", "Log"],
+    "homepage": "https://etus.com.br",
+    "license": "MIT",
     "authors": [
         {
             "name": "Aislan Dener",
             "email": "aislandenersouzavicentini@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
-        "baopham/dynamodb": "^6.1"
+        "baopham/dynamodb": "^6.1",
+        "php": ">=5.4.0",
+        "illuminate/support": ">=4.0"
     },
     "autoload": {
         "psr-4": {
             "Etus\\EtusLog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Etus\\EtusLog\\EtusLogServiceProvider"
+            ],
+            "aliases": {
+                "EtusLog": "Etus\\EtusLog\\Facades\\EtusLog"
+            }
         }
     }
 }
