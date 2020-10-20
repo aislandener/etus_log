@@ -1,5 +1,6 @@
 {
     "name": "aislandener/etus-log",
+    "description": "Register Log for Etus",
     "type": "library",
     "authors": [
         {
@@ -7,6 +8,7 @@
             "email": "aislandenersouzavicentini@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
     },
     "autoload": {
