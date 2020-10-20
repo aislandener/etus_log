@@ -7,7 +7,9 @@
             "email": "aislandenersouzavicentini@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "baopham/dynamodb": "^6.1"
+    },
     "autoload": {
         "psr-4": {
             "Etus\\EtusLog\\": "src/"

@@ -1,4 +1,4 @@
- <?php
+<?php
  
 namespace Etus\EtusLog;
 
@@ -14,5 +14,6 @@ class EtusLogServiceProvider extends ServiceProvider{
 
     public function register()
     {
+
     }
 }
