@@ -56,7 +56,7 @@ class Log extends DynamoDbModel{
 
                 $validator = Validator::make($data, [
                     'origin' => 'required',
-                    'request' => 'required|array',
+                    'request' => 'required',
                     'response' => 'required'
                 ]);
 
