@@ -7,6 +7,7 @@ use Aws\DynamoDb\Marshaler;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Facades\Validator;
+use Ramsey\Uuid\Uuid;
 
 class RegisterLog{
     private $client;
@@ -60,7 +61,7 @@ class RegisterLog{
             $log = [
                 'id' => (string) Uuid::uuid4(),
                 'created_at' => (int) $timestamp,
-                'origin' => (string) $data['origin'],
+                'origem' => (string) $data['origin'],
                 'request' => $data['request'],
                 'response' => $data['response']
             ];
