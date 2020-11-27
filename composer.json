@@ -3,7 +3,11 @@
     "description": "Register Log for Etus",
     "version": "1.4.1",
     "type": "library",
-    "keywords": ["Etus", "Laravel", "Log"],
+    "keywords": [
+        "Etus",
+        "Laravel",
+        "Log"
+    ],
     "homepage": "https://etus.com.br",
     "license": "MIT",
     "authors": [
@@ -12,11 +16,14 @@
             "email": "aislandenersouzavicentini@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "baopham/dynamodb": "^6.1",
-        "php": ">=5.4.0",
-        "illuminate/support": ">=4.0"
+        "php": ">=7.0",
+        "aws/aws-sdk-php": "^3.164",
+        "nesbot/carbon": "2.41.5",
+        "ext-json": "*",
+        "illuminate/support": "^8.16",
+        "ramsey/uuid": "^4.1"
     },
     "autoload": {
         "psr-4": {

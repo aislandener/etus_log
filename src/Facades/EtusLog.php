@@ -1,12 +1,12 @@
 <?php
 
-namespace EtusLog\Etus\Facades;
+namespace Etus\EtusLog\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \Ixudra\Curl\Builder to(string $url)
+ * @method static \Etus\EtusLog\RegisterLog to(string $url)
  */
-class Curl extends Facade {
+class EtusLog extends Facade {
 
     /**
      * @return string
