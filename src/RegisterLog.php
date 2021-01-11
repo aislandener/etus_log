@@ -28,8 +28,11 @@ class RegisterLog{
         $this->table = config("etus_log.aws.table");
     }
 
-    public function store($data)
+    public function store($data, $table = null)
     {
+        if(is_null($table)){
+            $table = $this->table
+        }
         if(!config('etus_log.enable'))
             return (object)[
                 'success' => true
@@ -73,7 +76,7 @@ class RegisterLog{
             $item = $this->marshaler->marshalItem($log);
 
             $params = [
-                'TableName' => $this->table,
+                'TableName' => $table,
                 'Item' => $item
             ];
 
