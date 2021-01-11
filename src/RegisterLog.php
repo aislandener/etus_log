@@ -31,7 +31,7 @@ class RegisterLog{
     public function store($data, $table = null)
     {
         if(is_null($table)){
-            $table = $this->table
+            $table = $this->table;
         }
         if(!config('etus_log.enable'))
             return (object)[
