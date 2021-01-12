@@ -41,8 +41,7 @@ class RegisterLog{
             }
             $data = (array)$data;
 
-            $now = Carbon::now();
-            $timestamp = $now->timestamp;
+            $timestamp = time();
 
             $data['id'] = (string)Uuid::uuid4();
             $data['created_at'] = (int)$timestamp;
