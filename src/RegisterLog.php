@@ -28,6 +28,46 @@ class RegisterLog{
         $this->table = config("etus_log.aws.table");
     }
 
+    public function storeV2($data, $table = null){
+        try {
+            if (is_null($table)) {
+                $table = $this->table;
+            }
+
+            if (!config('etus_log.enable')) {
+                return (object)[
+                    'success' => true
+                ];
+            }
+            $data = (array)$data;
+
+            $now = Carbon::now();
+            $timestamp = $now->timestamp;
+
+            $data['id'] = (string)Uuid::uuid4();
+            $data['created_at'] = (int)$timestamp;
+
+            $item = $this->marshaler->marshalItem($data);
+
+            $params = [
+                'TableName' => $table,
+                'Item' => $item
+            ];
+
+            $result = $this->client->putItem($params);
+
+            return (object)[
+                'success' => true,
+                'message' => $result
+            ];
+        }catch (Exception $e){
+            return (object)[
+                'success' => false,
+                'message' => 'Internal server error ' . $e->getMessage()
+            ];
+        }
+    }
+
     public function store($data, $table = null)
     {
         if(is_null($table)){
