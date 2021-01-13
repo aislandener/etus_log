@@ -1,7 +1,7 @@
 {
     "name": "aislandener/etus-log",
     "description": "Register Log for Etus",
-    "version": "1.10.0",
+    "version": "1.11.0",
     "type": "library",
     "keywords": [
         "Etus",
@@ -20,8 +20,7 @@
     "require": {
         "php": ">=7.0",
         "aws/aws-sdk-php": "^3.164",
-        "ext-json": "*",
-        "ramsey/uuid": "^4.1"
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {

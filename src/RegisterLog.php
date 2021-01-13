@@ -4,10 +4,7 @@ namespace Etus\EtusLog;
 
 use Aws\DynamoDb\DynamoDbClient;
 use Aws\DynamoDb\Marshaler;
-use Carbon\Carbon;
 use Exception;
-use Illuminate\Support\Facades\Validator;
-use Ramsey\Uuid\Uuid;
 
 class RegisterLog{
     private $client;
@@ -35,15 +32,16 @@ class RegisterLog{
             }
 
             if (!config('etus_log.enable')) {
-                return (object)[
+                return (object) [
                     'success' => true
                 ];
             }
+
             $data = (array)$data;
 
             $timestamp = time();
 
-            $data['id'] = (string)Uuid::uuid4();
+            $data['id'] = (string) uniqid() . "-" . uniqid() . "-" . time();
             $data['created_at'] = (int)$timestamp;
 
             $item = $this->marshaler->marshalItem($data);
@@ -55,12 +53,12 @@ class RegisterLog{
 
             $result = $this->client->putItem($params);
 
-            return (object)[
+            return (object) [
                 'success' => true,
                 'message' => $result
             ];
         }catch (Exception $e){
-            return (object)[
+            return (object) [
                 'success' => false,
                 'message' => 'Internal server error ' . $e->getMessage()
             ];
@@ -78,30 +76,16 @@ class RegisterLog{
             ];
 
         try {
-            $validator = Validator::make($data, [
-                'origin' => 'required',
-                'request' => 'required',
-                'response' => 'required'
-            ]);
-
-            if ($validator->fails()) {
-                return (object)[
-                    'success' => false,
-                    'message' =>$validator->errors()->all()
-                ];
-            }
-
-            $data['request']    = json_encode($data['request']);
+            $data['request'] = json_encode($data['request']);
 
             if(is_array($data['response']) || is_object(($data['response']))) {
                 $data['response'] = json_encode($data['response']);
             }
 
-            $now = Carbon::now();
-            $timestamp = $now->timestamp;
+            $timestamp = time();
 
             $log = [
-                'id' => (string) Uuid::uuid4(),
+                'id' => (string) uniqid() . "-" . uniqid() . "-" . time(),
                 'created_at' => (int) $timestamp,
                 'origem' => (string) $data['origin'],
                 'request' => $data['request'],
